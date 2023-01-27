@@ -1,0 +1,86 @@
+[gd_scene load_steps=8 format=3 uid="uid://darwkjnd3army"]
+
+[ext_resource type="Script" path="res://scenes/effects/path_line_3d_effect.gd" id="1_r13og"]
+[ext_resource type="Texture2D" uid="uid://dbsaiqcj0lrls" path="res://scenes/effects/effect_image.png" id="2_wmj76"]
+
+[sub_resource type="Curve3D" id="Curve3D_67s3l"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -28.0154, -15.2773, -2.9174, 0, 0, 0, 0, 0, 0, -28.0154, -15.2773, -2.9174, 0, 0, 0, 0, 0, 0, 15.3835, 30.8685, -19.6148, 0, 0, 0, 0, 0, 0, 66.7748, 16.1858, 26.045, 0, 0, 0, 0, 0, 0, 32.5945, -16.9934, 36.2089, 0, 0, 0, 0, 0, 0, -42.4797, 20.3808, -45.5231, 0, 0, 0, 0, 0, 0, -34.4967, 53.56, -71.8983, 0, 0, 0, 0, 0, 0, -8.66547, 65.0011, -66.7117, 0, 0, 0, 0, 0, 0, 87.4684, 53.3694, 3.756, 0, 0, 0, 0, 0, 0, -641.782, 17.2271, 41.3297, 0, 0, 0, 0, 0, 0, -661.112, -35.8021, 78.1184),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+}
+point_count = 11
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fxcyh"]
+transparency = 2
+alpha_scissor_threshold = 0.036
+alpha_antialiasing_mode = 0
+cull_mode = 2
+no_depth_test = true
+albedo_color = Color(0.639216, 0.576471, 0.839216, 1)
+albedo_texture = ExtResource("2_wmj76")
+uv1_scale = Vector3(0.5, 2, 1)
+uv1_offset = Vector3(1, 0, 0)
+
+[sub_resource type="Animation" id="Animation_b4ied"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CSGPolygon3D:material:uv1_offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(1, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_0jeqb"]
+resource_name = "animation"
+length = 0.1
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CSGPolygon3D:material:uv1_offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(1, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_v4noe"]
+_data = {
+"RESET": SubResource("Animation_b4ied"),
+"animation": SubResource("Animation_0jeqb")
+}
+
+[node name="Path3D" type="Path3D"]
+curve = SubResource("Curve3D_67s3l")
+script = ExtResource("1_r13og")
+length = 3
+target_node_path = NodePath("../Player/Marker3D")
+
+[node name="CSGPolygon3D" type="CSGPolygon3D" parent="."]
+polygon = PackedVector2Array(0, 0, 0.417829, 0.968534, 1, 0)
+mode = 2
+path_node = NodePath("..")
+path_interval_type = 0
+path_interval = 0.1
+path_simplify_angle = 0.0
+path_rotation = 2
+path_local = false
+path_continuous_u = true
+path_u_distance = 1.0
+path_joined = false
+material = SubResource("StandardMaterial3D_fxcyh")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "animation"
+libraries = {
+"": SubResource("AnimationLibrary_v4noe")
+}

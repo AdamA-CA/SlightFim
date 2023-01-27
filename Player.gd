@@ -3,14 +3,15 @@ extends RigidBody3D
 @export var thrust : float = 10.0
 @export var uplift_strength : float = .5
 
+var particles = preload("res://scenes/effects/particles_now.material")
+
 func _ready():
 	pass # Replace with function body.
 
-func _process(delta):
+func _process(delta: float) -> void:
 	pass
-
-func _physics_process(delta):
-	pass
+	#particles.set_param_min(ParticleProcessMaterial.PARAM_INITIAL_LINEAR_VELOCITY,linear_velocity.length())
+	#particles.set_direction(-global_transform.basis.x)
 
 func _integrate_forces(state):
 	if Input.is_action_pressed("ui_accept"):
