@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://darwkjnd3army"]
+[gd_scene load_steps=7 format=3 uid="uid://darwkjnd3army"]
 
 [ext_resource type="Script" path="res://scenes/effects/path_line_3d_effect.gd" id="1_r13og"]
 [ext_resource type="Texture2D" uid="uid://dbsaiqcj0lrls" path="res://scenes/effects/effect_image.png" id="2_wmj76"]
@@ -11,34 +11,25 @@ _data = {
 point_count = 11
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fxcyh"]
-transparency = 2
-alpha_scissor_threshold = 0.036
-alpha_antialiasing_mode = 0
+transparency = 1
+blend_mode = 1
 cull_mode = 2
-no_depth_test = true
-albedo_color = Color(0.639216, 0.576471, 0.839216, 1)
+depth_draw_mode = 2
+albedo_color = Color(1, 0.807843, 0.556863, 1)
 albedo_texture = ExtResource("2_wmj76")
-uv1_scale = Vector3(0.5, 2, 1)
-uv1_offset = Vector3(1, 0, 0)
-
-[sub_resource type="Animation" id="Animation_b4ied"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("CSGPolygon3D:material:uv1_offset")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(1, 0, 0)]
-}
+metallic_specular = 1.0
+roughness = 0.0
+emission = Color(1, 1, 1, 1)
+emission_on_uv2 = true
+uv1_scale = Vector3(1, 3.961, 1)
+uv1_offset = Vector3(0.197, -0.463, 0)
+disable_receive_shadows = true
+grow = true
+grow_amount = 0.1
 
 [sub_resource type="Animation" id="Animation_0jeqb"]
 resource_name = "animation"
-length = 0.1
+length = 0.5
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -47,15 +38,14 @@ tracks/0/path = NodePath("CSGPolygon3D:material:uv1_offset")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1),
+"times": PackedFloat32Array(0, 0.5),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector3(0, 0, 0), Vector3(1, 0, 0)]
+"values": [Vector3(0, 0.25, 0), Vector3(1, 0.25, 0)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_v4noe"]
 _data = {
-"RESET": SubResource("Animation_b4ied"),
 "animation": SubResource("Animation_0jeqb")
 }
 
@@ -66,11 +56,11 @@ length = 3
 target_node_path = NodePath("../Player/Marker3D")
 
 [node name="CSGPolygon3D" type="CSGPolygon3D" parent="."]
-polygon = PackedVector2Array(0, 0, 0.417829, 0.968534, 1, 0)
+polygon = PackedVector2Array(0.120818, 0.137311, 0.4212, -0.00777149, 0, 0)
 mode = 2
 path_node = NodePath("..")
-path_interval_type = 0
-path_interval = 0.1
+path_interval_type = 1
+path_interval = 0.07
 path_simplify_angle = 0.0
 path_rotation = 2
 path_local = false
