@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://s62sx6yolw1u"]
+
+[ext_resource type="Script" path="res://debug/FollowMinimap.gd" id="1_caffp"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6ijue"]
+albedo_color = Color(1, 0.254902, 0.235294, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_1gliw"]
+
+[node name="MeshInstance3D3" type="MeshInstance3D"]
+transform = Transform3D(500, 0, 0, 0, 500, 0, 0, 0, 500, 0, 174.274, 0)
+visible = false
+layers = 2
+material_override = SubResource("StandardMaterial3D_6ijue")
+cast_shadow = 0
+mesh = SubResource("BoxMesh_1gliw")
+script = ExtResource("1_caffp")

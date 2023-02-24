@@ -13,5 +13,8 @@ func _ready() -> void:
 func _physics_process(delta: float) -> void:
 	var pos = camera_position_marker.global_transform.origin#+lookat_offset_position
 	var offset = camera_position_marker.global_position.distance_to(global_position)
-	pos = lerp(global_position,pos,clamp(delta*follow_speed*(player_rigid_body.linear_velocity.length()/800),0.0,1.0))
-	look_at_from_position(pos,player_rigid_body.global_transform.origin,Vector3.UP)
+	pos = lerp(global_position,pos,.25)
+	rotation.x = lerp_angle(player_rigid_body.rotation.x,rotation.x,.25)
+	rotation.y = lerp_angle(player_rigid_body.rotation.y,rotation.y,.25)
+	rotation.z = lerp_angle(player_rigid_body.rotation.z,rotation.z,.25)
+	global_position = pos
