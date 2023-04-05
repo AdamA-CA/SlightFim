@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://bb2eofetfgu20"]
+[gd_scene load_steps=10 format=3 uid="uid://bb2eofetfgu20"]
 
 [ext_resource type="Script" path="res://scenes/enemies/GroundEnemy.gd" id="1_pyrxc"]
 [ext_resource type="AudioStream" uid="uid://60o0uixb6ql6" path="res://asset/sounds/Vine-boom-sound-effect.mp3" id="2_4stxl"]
@@ -16,7 +16,7 @@ point_count = 2
 [sub_resource type="CurveTexture" id="CurveTexture_b1hv2"]
 curve = SubResource("Curve_exelt")
 
-[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_f7fb7"]
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_7bvi0"]
 direction = Vector3(1, 1, 0)
 spread = 180.0
 initial_velocity_min = 59.7
@@ -25,10 +25,16 @@ scale_min = 10.0
 scale_max = 10.0
 scale_curve = SubResource("CurveTexture_b1hv2")
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0ulna"]
+vertex_color_use_as_albedo = true
+
 [sub_resource type="BoxMesh" id="BoxMesh_vkrlf"]
+material = SubResource("StandardMaterial3D_0ulna")
 
 [node name="GroundEnemy" type="RigidBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 204.008, 0)
+collision_layer = 5
+collision_mask = 3
 mass = 50.0
 gravity_scale = 5.0
 max_contacts_reported = 2
@@ -47,7 +53,7 @@ emitting = false
 amount = 32
 one_shot = true
 explosiveness = 0.98
-process_material = SubResource("ParticleProcessMaterial_f7fb7")
+process_material = SubResource("ParticleProcessMaterial_7bvi0")
 draw_pass_1 = SubResource("BoxMesh_vkrlf")
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]

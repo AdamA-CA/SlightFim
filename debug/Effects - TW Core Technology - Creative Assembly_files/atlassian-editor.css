@@ -1,0 +1,11 @@
+/*
+ * This file is included direct from the theme module to solve issues concering the atlassian editor in combination with creating page from template.
+ * The template action dosn't load any global decorateors so this is the only way to deliver CSS to that page.
+ */
+
+body.contenteditor #header {
+  display: none;
+}
+body.contenteditor #action-messages {
+  display: none;
+}

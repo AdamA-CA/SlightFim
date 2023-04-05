@@ -1,0 +1,6 @@
+WRMCB=function(e){var c=console;if(c&&c.log&&c.error){c.log('Error running batched script.');c.error(e);}}
+;
+try {
+/* module-key = 'com.refinedwiki.confluence.plugins.theme.original:54', location = 'mw-header-anchor.f422f5ca34fe3944af38.js' */
+(window.webpackJsonpRefinedConfluenceWebPack=window.webpackJsonpRefinedConfluenceWebPack||[]).push([[54],{752:function(e,n,o){e.exports=void 0}}]);
+}catch(e){WRMCB(e)};

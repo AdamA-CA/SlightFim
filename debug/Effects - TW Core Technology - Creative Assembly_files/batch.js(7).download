@@ -1,0 +1,6 @@
+WRMCB=function(e){var c=console;if(c&&c.log&&c.error){c.log('Error running batched script.');c.error(e);}}
+;
+try {
+/* module-key = 'com.refinedwiki.confluence.plugins.theme.original:34', location = 'compatibility-helper.fe5d8e84ad8d7dc18562.js' */
+(window.webpackJsonpRefinedConfluenceWebPack=window.webpackJsonpRefinedConfluenceWebPack||[]).push([[34],{744:function(n,t,e){"use strict";e.r(t),e.d(t,"CompatibilityController",(function(){return c}));var i=e(0),o=e.n(i);const c={init(){this.initK15t()},initK15t(){(o()("#k15t-docs-app-container").length||o()("#k15t-docs-document-metadata-dialog-spark-app-container").length)&&e.e(46).then(e.bind(null,962)).then((n=>{let{K15tScrollDocumentController:t}=n;return t.init()}))}}}}]);
+}catch(e){WRMCB(e)};

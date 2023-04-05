@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<!-- saved from url=(0172)https://confluence.creative-assembly.com/plugins/servlet/scroll-documents/ui/?app=document-toolbox-dialog&moduleType=inlineDialog&spaceKey=TWCT&contentId=93146157&loc=en-GB -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<script>
+(()=>{var e={54:e=>{function t(e){return t="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e},t(e)}!function(n){if("undefined"!=typeof window){var o=!0,i="",r=0,a="",u=null,c="",s=!1,d={resize:1,click:1},l=128,f=!0,m=1,h="bodyOffset",g=h,p=!0,v="",y={},b=32,w=null,T=!1,S="[iFrameSizer]",E=S.length,O="",M={max:1,min:1,bodyScroll:1,documentElementScroll:1},I="child",N=window.parent,C="*",A=0,x=!1,R=null,z=16,k=1,P="scroll",L=P,F=window,D=function(){ae("onMessage function not defined")},j=function(){},W=function(){},q={height:function(){return ae("Custom height calculation function not defined"),document.documentElement.offsetHeight},width:function(){return ae("Custom width calculation function not defined"),document.body.scrollWidth}},H={},B=!1;try{var K=Object.create({},{passive:{get:function(){B=!0}}});window.addEventListener("test",te,K),window.removeEventListener("test",te,K)}catch(e){}var J,U,V,Q,X,Y,_,G=Date.now||function(){return(new Date).getTime()},Z={bodyOffset:function(){return document.body.offsetHeight+pe("marginTop")+pe("marginBottom")},offset:function(){return Z.bodyOffset()},bodyScroll:function(){return document.body.scrollHeight},custom:function(){return q.height()},documentElementOffset:function(){return document.documentElement.offsetHeight},documentElementScroll:function(){return document.documentElement.scrollHeight},max:function(){return Math.max.apply(null,ye(Z))},min:function(){return Math.min.apply(null,ye(Z))},grow:function(){return Z.max()},lowestElement:function(){return Math.max(Z.bodyOffset()||Z.documentElementOffset(),ve("bottom",we()))},taggedElement:function(){return be("bottom","data-iframe-height")}},$={bodyScroll:function(){return document.body.scrollWidth},bodyOffset:function(){return document.body.offsetWidth},custom:function(){return q.width()},documentElementScroll:function(){return document.documentElement.scrollWidth},documentElementOffset:function(){return document.documentElement.offsetWidth},scroll:function(){return Math.max($.bodyScroll(),$.documentElementScroll())},max:function(){return Math.max.apply(null,ye($))},min:function(){return Math.min.apply(null,ye($))},rightMostElement:function(){return ve("right",we())},taggedElement:function(){return be("right","data-iframe-width")}},ee=(J=Te,X=null,Y=0,_=function(){Y=G(),X=null,Q=J.apply(U,V),X||(U=V=null)},function(){var e=G();Y||(Y=e);var t=z-(e-Y);return U=this,V=arguments,t<=0||t>z?(X&&(clearTimeout(X),X=null),Y=e,Q=J.apply(U,V),X||(U=V=null)):X||(X=setTimeout(_,t)),Q});ne(window,"message",(function(t){var d,m={init:function(){var e,d,m;v=t.data,N=t.source,function(){function e(e){return"true"===e}var t=v.substr(E).split(":");O=t[0],r=n!==t[1]?Number(t[1]):r,s=n!==t[2]?e(t[2]):s,T=n!==t[3]?e(t[3]):T,b=n!==t[4]?Number(t[4]):b,o=n!==t[6]?e(t[6]):o,a=t[7],g=n!==t[8]?t[8]:g,i=t[9],c=t[10],A=n!==t[11]?Number(t[11]):A,y.enable=n!==t[12]&&e(t[12]),I=n!==t[13]?t[13]:I,L=n!==t[14]?t[14]:L}(),re("Initialising iFrame ("+location.href+")"),function(){function e(){var e=window.iFrameResizer;re("Reading data from page: "+JSON.stringify(e)),Object.keys(e).forEach(ue,e),D="onMessage"in e?e.onMessage:D,j="onReady"in e?e.onReady:j,C="targetOrigin"in e?e.targetOrigin:C,g="heightCalculationMethod"in e?e.heightCalculationMethod:g,L="widthCalculationMethod"in e?e.widthCalculationMethod:L}function t(e,t){return"function"==typeof e&&(re("Setup custom "+t+"CalcMethod"),q[t]=e,e="custom"),e}"iFrameResizer"in window&&Object===window.iFrameResizer.constructor&&(e(),g=t(g,"height"),L=t(L,"width")),re("TargetOrigin for parent set to: "+C)}(),n===a&&(a=r+"px"),ce("margin",(d="margin",-1!==(m=a).indexOf("-")&&(ae("Negative CSS value ignored for "+d),m=""),m)),ce("background",i),ce("padding",c),(e=document.createElement("div")).style.clear="both",e.style.display="block",e.style.height="0",document.body.appendChild(e),fe(),me(),document.documentElement.style.height="",document.body.style.height="",re('HTML & body height set to "auto"'),re("Enable public methods"),F.parentIFrame={autoResize:function(e){return!0===e&&!1===o?(o=!0,he()):!1===e&&!0===o&&(o=!1,de("remove"),null!==u&&u.disconnect(),clearInterval(w)),Ie(0,0,"autoResize",JSON.stringify(o)),o},close:function(){Ie(0,0,"close")},getId:function(){return O},getPageInfo:function(e){"function"==typeof e?(W=e,Ie(0,0,"pageInfo")):(W=function(){},Ie(0,0,"pageInfoStop"))},moveToAnchor:function(e){y.findTarget(e)},reset:function(){Me("parentIFrame.reset")},scrollTo:function(e,t){Ie(t,e,"scrollTo")},scrollToOffset:function(e,t){Ie(t,e,"scrollToOffset")},sendMessage:function(e,t){Ie(0,0,"message",JSON.stringify(e),t)},setHeightCalculationMethod:function(e){g=e,fe()},setWidthCalculationMethod:function(e){L=e,me()},setTargetOrigin:function(e){re("Set targetOrigin: "+e),C=e},size:function(e,t){Se("size","parentIFrame.size("+(e||"")+(t?","+t:"")+")",e,t)}},he(),y=function(){function e(){return{x:window.pageXOffset!==n?window.pageXOffset:document.documentElement.scrollLeft,y:window.pageYOffset!==n?window.pageYOffset:document.documentElement.scrollTop}}function t(t){var n=t.getBoundingClientRect(),o=e();return{x:parseInt(n.left,10)+parseInt(o.x,10),y:parseInt(n.top,10)+parseInt(o.y,10)}}function o(e){function o(e){var n=t(e);re("Moving to in page link (#"+i+") at x: "+n.x+" y: "+n.y),Ie(n.y,n.x,"scrollToOffset")}var i=e.split("#")[1]||e,r=decodeURIComponent(i),a=document.getElementById(r)||document.getElementsByName(r)[0];n!==a?o(a):(re("In page link (#"+i+") not found in iFrame, so sending to parent"),Ie(0,0,"inPageLink","#"+i))}function i(){""!==location.hash&&"#"!==location.hash&&o(location.href)}function r(){function e(e){function t(e){e.preventDefault(),o(this.getAttribute("href"))}"#"!==e.getAttribute("href")&&ne(e,"click",t)}Array.prototype.forEach.call(document.querySelectorAll('a[href^="#"]'),e)}function a(){ne(window,"hashchange",i)}function u(){setTimeout(i,l)}function c(){Array.prototype.forEach&&document.querySelectorAll?(re("Setting up location.hash handlers"),r(),a(),u()):ae("In page linking not fully supported in this browser! (See README.md for IE8 workaround)")}return y.enable?c():re("In page linking not enabled"),{findTarget:o}}(),Se("init","Init message from host page"),j(),f=!1,setTimeout((function(){p=!1}),l)},reset:function(){p?re("Page reset ignored by init"):(re("Page size reset by host page"),Oe("resetPage"))},resize:function(){Se("resizeParent","Parent window requested size check")},moveToAnchor:function(){y.findTarget(M())},inPageLink:function(){this.moveToAnchor()},pageInfo:function(){var e=M();re("PageInfoFromParent called from parent: "+e),W(JSON.parse(e)),re(" --")},message:function(){var e=M();re("onMessage called from parent: "+e),D(JSON.parse(e)),re(" --")}};function h(){return t.data.split("]")[1].split(":")[0]}function M(){return t.data.substr(t.data.indexOf(":")+1)}function x(){return t.data.split(":")[2]in{true:1,false:1}}S===(""+t.data).substr(0,E)&&(!1===f?(d=h())in m?m[d]():!e.exports&&"iFrameResize"in window||"jQuery"in window&&"iFrameResize"in window.jQuery.prototype||x()||ae("Unexpected message ("+t.data+")"):x()?m.init():re('Ignored message of type "'+h()+'". Received before initialization.'))})),ne(window,"readystatechange",Ne),Ne()}function te(){}function ne(e,t,n,o){e.addEventListener(t,n,!!B&&(o||{}))}function oe(e){return e.charAt(0).toUpperCase()+e.slice(1)}function ie(e){return S+"["+O+"] "+e}function re(e){T&&"object"===t(window.console)&&console.log(ie(e))}function ae(e){"object"===t(window.console)&&console.warn(ie(e))}function ue(e){var t=e.split("Callback");if(2===t.length){var n="on"+t[0].charAt(0).toUpperCase()+t[0].slice(1);this[n]=this[e],delete this[e],ae("Deprecated: '"+e+"' has been renamed '"+n+"'. The old method will be removed in the next major version.")}}function ce(e,t){n!==t&&""!==t&&"null"!==t&&(document.body.style[e]=t,re("Body "+e+' set to "'+t+'"'))}function se(e){var t={add:function(t){function n(){Se(e.eventName,e.eventType)}H[t]=n,ne(window,t,n,{passive:!0})},remove:function(e){var t,n,o=H[e];delete H[e],t=e,n=o,window.removeEventListener(t,n,!1)}};e.eventNames&&Array.prototype.map?(e.eventName=e.eventNames[0],e.eventNames.map(t[e.method])):t[e.method](e.eventName),re(oe(e.method)+" event listener: "+e.eventType)}function de(e){se({method:e,eventType:"Animation Start",eventNames:["animationstart","webkitAnimationStart"]}),se({method:e,eventType:"Animation Iteration",eventNames:["animationiteration","webkitAnimationIteration"]}),se({method:e,eventType:"Animation End",eventNames:["animationend","webkitAnimationEnd"]}),se({method:e,eventType:"Input",eventName:"input"}),se({method:e,eventType:"Mouse Up",eventName:"mouseup"}),se({method:e,eventType:"Mouse Down",eventName:"mousedown"}),se({method:e,eventType:"Orientation Change",eventName:"orientationchange"}),se({method:e,eventType:"Print",eventName:["afterprint","beforeprint"]}),se({method:e,eventType:"Ready State Change",eventName:"readystatechange"}),se({method:e,eventType:"Touch Start",eventName:"touchstart"}),se({method:e,eventType:"Touch End",eventName:"touchend"}),se({method:e,eventType:"Touch Cancel",eventName:"touchcancel"}),se({method:e,eventType:"Transition Start",eventNames:["transitionstart","webkitTransitionStart","MSTransitionStart","oTransitionStart","otransitionstart"]}),se({method:e,eventType:"Transition Iteration",eventNames:["transitioniteration","webkitTransitionIteration","MSTransitionIteration","oTransitionIteration","otransitioniteration"]}),se({method:e,eventType:"Transition End",eventNames:["transitionend","webkitTransitionEnd","MSTransitionEnd","oTransitionEnd","otransitionend"]}),"child"===I&&se({method:e,eventType:"IFrame Resized",eventName:"resize"})}function le(e,t,n,o){return t!==e&&(e in n||(ae(e+" is not a valid option for "+o+"CalculationMethod."),e=t),re(o+' calculation method set to "'+e+'"')),e}function fe(){g=le(g,h,Z,"height")}function me(){L=le(L,P,$,"width")}function he(){var e;!0===o?(de("add"),e=0>b,window.MutationObserver||window.WebKitMutationObserver?e?ge():u=function(){function e(e){function t(e){!1===e.complete&&(re("Attach listeners to "+e.src),e.addEventListener("load",i,!1),e.addEventListener("error",r,!1),u.push(e))}"attributes"===e.type&&"src"===e.attributeName?t(e.target):"childList"===e.type&&Array.prototype.forEach.call(e.target.querySelectorAll("img"),t)}function t(e){re("Remove listeners from "+e.src),e.removeEventListener("load",i,!1),e.removeEventListener("error",r,!1),function(e){u.splice(u.indexOf(e),1)}(e)}function o(e,o,i){t(e.target),Se(o,i+": "+e.target.src,n,n)}function i(e){o(e,"imageLoad","Image loaded")}function r(e){o(e,"imageLoadFailed","Image load failed")}function a(t){Se("mutationObserver","mutationObserver: "+t[0].target+" "+t[0].type),t.forEach(e)}var u=[],c=window.MutationObserver||window.WebKitMutationObserver,s=function(){var e=document.querySelector("body");return s=new c(a),re("Create body MutationObserver"),s.observe(e,{attributes:!0,attributeOldValue:!1,characterData:!0,characterDataOldValue:!1,childList:!0,subtree:!0}),s}();return{disconnect:function(){"disconnect"in s&&(re("Disconnect body MutationObserver"),s.disconnect(),u.forEach(t))}}}():(re("MutationObserver not supported in this browser!"),ge())):re("Auto Resize disabled")}function ge(){0!==b&&(re("setInterval: "+b+"ms"),w=setInterval((function(){Se("interval","setInterval: "+b)}),Math.abs(b)))}function pe(e,t){var n=0;return t=t||document.body,n=null!==(n=document.defaultView.getComputedStyle(t,null))?n[e]:0,parseInt(n,10)}function ve(e,t){for(var n=t.length,o=0,i=0,r=oe(e),a=G(),u=0;u<n;u++)(o=t[u].getBoundingClientRect()[e]+pe("margin"+r,t[u]))>i&&(i=o);return a=G()-a,re("Parsed "+n+" HTML elements"),re("Element position calculated in "+a+"ms"),function(e){e>z/2&&re("Event throttle increased to "+(z=2*e)+"ms")}(a),i}function ye(e){return[e.bodyOffset(),e.bodyScroll(),e.documentElementOffset(),e.documentElementScroll()]}function be(e,t){var n=document.querySelectorAll("["+t+"]");return 0===n.length&&(ae("No tagged elements ("+t+") found on page"),document.querySelectorAll("body *")),ve(e,n)}function we(){return document.querySelectorAll("body *")}function Te(e,t,o,i){var r,a;!function(){function e(e,t){return!(Math.abs(e-t)<=A)}return r=n!==o?o:Z[g](),a=n!==i?i:$[L](),e(m,r)||s&&e(k,a)}()&&"init"!==e?!(e in{init:1,interval:1,size:1})&&(g in M||s&&L in M)?Me(t):e in{interval:1}||re("No change in size detected"):(Ee(),Ie(m=r,k=a,e))}function Se(e,t,n,o){x&&e in d?re("Trigger event cancelled: "+e):(e in{reset:1,resetPage:1,init:1}||re("Trigger event: "+t),"init"===e?Te(e,t,n,o):ee(e,t,n,o))}function Ee(){x||(x=!0,re("Trigger event lock on")),clearTimeout(R),R=setTimeout((function(){x=!1,re("Trigger event lock off"),re("--")}),l)}function Oe(e){m=Z[g](),k=$[L](),Ie(m,k,e)}function Me(e){var t=g;g=h,re("Reset trigger event: "+e),Ee(),Oe("reset"),g=t}function Ie(e,t,o,i,r){var a;n===r?r=C:re("Message targetOrigin: "+r),re("Sending message to host page ("+(a=O+":"+e+":"+t+":"+o+(n!==i?":"+i:""))+")"),N.postMessage(S+a,r)}function Ne(){"loading"!==document.readyState&&window.parent.postMessage("[iFrameResizerChild]Ready","*")}}()}},t={};function n(o){var i=t[o];if(void 0!==i)return i.exports;var r=t[o]={exports:{}};return e[o](r,r.exports,n),r.exports}n.n=e=>{var t=e&&e.__esModule?()=>e.default:()=>e;return n.d(t,{a:t}),t},n.d=(e,t)=>{for(var o in t)n.o(t,o)&&!n.o(e,o)&&Object.defineProperty(e,o,{enumerable:!0,get:t[o]})},n.o=(e,t)=>Object.prototype.hasOwnProperty.call(e,t),(()=>{"use strict";var e,t;n(54),window.SPARK=window.SPARK||{},e=window.SPARK,t=window.frameElement.SPARK||{},e.getContextData=function(){return t.contextData},e.getDialogControls=function(){return t.dialogControls},e.getCustomContext=function(){return t.customContext},e.setContainerWidth=t.setContainerWidth})()})();
+</script>
+<meta http-equiv="Content-Security-Policy" content="base-uri &#39;self&#39;; object-src &#39;self&#39;; script-src &#39;self&#39; https://connect-cdn.atl-paas.net https://cdn.segment.com &#39;sha256-7r/A2j4q5oemDWMq175vdUP93yFfczwQlo06AbI+Xb0=&#39; &#39;sha256-p0mrPDjbR/e6PK3HsEO+qr4jA/P04r8paiDsyKyzj8o=&#39;; style-src &#39;self&#39; &#39;unsafe-inline&#39; https:; default-src &#39;self&#39;; connect-src &#39;self&#39; https://cdn.segment.com https://api.segment.io *.amazonaws.com; img-src &#39;self&#39; blob: data: https:; font-src &#39;self&#39; blob: https:; frame-src &#39;self&#39; https://k15t.scrollhelp.site https://help-cloud.k15t.com https://help.k15t.com"><title>Scroll Documents (document-toolbox-dialog)</title><script>(function() {
+                // Mechanism for dynamic script loading. Allows us to load the scripts after the body is fully loaded so that Connect will
+                // not keep the IFrame hidden or at zero height for too long and show the content as soon as possible.
+                var scriptSources = [];
+                window.addScript = function(source) {
+                    scriptSources.push(source);
+                };
+                window.loadScripts = function() {
+                    for (var i = 0, len = scriptSources.length; i < len; i++) {
+                        var element = document.createElement('script');
+                        element.src = scriptSources[i];
+                        element.async = false;
+                        document.head.appendChild(element);
+                    }
+                };
+
+                // Disable macro editor submit button while the app is loading
+                if (location.search.match(/(^|&|\?)moduleType=macroEditor($|&)/) && window.AP) {
+                    var submitButton = window.AP.dialog.getButton('submit');
+                    if (submitButton) {
+                        submitButton.disable();
+                    }
+                }
+
+                // Allow closing the dialog while it is loading
+                if (location.search.match(/(^|&|\?)moduleType=dialog($|&)/)) {
+                    function closeDialog() {
+                        if (window.AP) {
+                            AP.dialog.close(null);
+                        } else if (window.SPARK) {
+                            SPARK.getDialogControls().closeDialog(null);
+                        }
+                    }
+
+                    window.addEventListener('keydown', function(e) {
+                        if ((e.key === 'Esc' || e.key === 'Escape') && !document.body.hasAttribute('app-loaded')) {
+                            closeDialog();
+                        }
+                    });
+
+                    window.addEventListener('click', function(e) {
+                        if (!document.body.hasAttribute('app-loaded')) {
+                            closeDialog();
+                        }
+                    });
+                }
+            })();</script><style>html {
+                /*
+                 * AtlasKit's css-reset sets this height 100%, this however breaks IFrameResizer that we want to
+                 * use on Server because then the height of the iframe content does not grow over the initial "100%"
+                 * this should not cause problems on browser either because AP resizes the height anyway to fit content
+                 * in our setup
+                 */
+                height: initial !important;
+            }
+
+            #loading {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                position: fixed;
+                top: 0;
+                left: 0;
+                z-index: 4000;
+                width: 100%;
+                height: 100%;
+                padding: 0;
+                visibility: visible;
+                opacity: 1;
+                background-color: transparent;
+                pointer-events: none;
+            }
+
+            .animation-container {
+                width: 50px;
+                height: 50px;
+                border-radius: 50%;
+                background: rgba(255, 255, 255, 0.9);
+                backdrop-filter: blur(3px);
+                filter: drop-shadow(0px 2px 7px rgba(0, 12, 52, 0.1));
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .animation-container svg {
+                width: 45%;
+            }
+
+            @keyframes bouncy {
+                0% {
+                    animation-timing-function: ease-in;
+                    transform: translateY(0);
+                }
+                50% {
+                    animation-timing-function: ease-out;
+                    transform: translateY(20px);
+                }
+            }
+
+            .anim-disc {
+                animation-iteration-count: infinite;
+                animation-duration: 0.86s;
+                animation-name: bouncy;
+            }
+
+            .anim-disc:nth-child(1) {
+                fill: #1062FB;
+                animation-delay: -0.2s;
+            }
+
+            .anim-disc:nth-child(2) {
+                fill: #2EB785;
+                animation-delay: -0.1s;
+            }
+
+            .anim-disc:nth-child(3) {
+                fill: #FFC420;
+            }
+
+            body[app-loaded] #loading {
+                visibility: hidden;
+                opacity: 0;
+            }
+
+            body:not([app-loaded]) {
+                min-height: 70px;
+            }
+
+            body[app-module-type=dialog] {
+                background: transparent;
+            }
+
+            body[app-module-type=dialog] .spin-circle {
+                stroke: #dddddd;
+            }
+
+            body[app-module-type=macroEditor] {
+                padding: 10px 15px;
+                box-sizing: border-box;
+            }
+
+            body[app-id=document-list-macro] .ac-content {
+                min-height: 150px;
+            }
+
+            #dropdown-container > * {
+                z-index: 550;
+            }</style><meta name="k15t-docs-api-path" content="/plugins/servlet/scroll-documents/api"><meta name="k15t-docs-license-status" content="active"><meta name="k15t-docs-app-version" content="3.13.0"><meta name="k15t-docs-analytics-enabled" content="true"><meta name="k15t-docs-legacy-reader-enabled" content="false"><meta name="k15t-docs-pdf-exporter-integration-hidden" content="false"><meta name="k15t-docs-word-exporter-integration-hidden" content="false"><meta name="k15t-docs-html-exporter-integration-hidden" content="true"><meta name="k15t-docs-confluence-context-path" content=""><meta name="k15t-docs-confluence-base-url" content="https://confluence.creative-assembly.com"><meta name="k15t-docs-confluence-access-mode" content="READ_WRITE"><meta name="k15t-docs-has-create-document-permission" content="true"><meta name="k15t-docs-has-create-page-permission" content="true"><meta name="k15t-docs-has-create-read-request-permission" content="true"><meta name="k15t-docs-confluence-version" content="7.19.0"><meta name="k15t-docs-variants-extension-state" content="demo"><meta name="k15t-docs-translations-extension-state" content="demo"><meta name="k15t-docs-scm-enabled-in-current-space" content="false"><meta name="k15t-docs-docs-enabled-in-current-space" content="true"><!--<base href="_/1679858178237/en_GB/">--><base href="."><script src="./main.876069863fbe8f0652d7.bundle.js.download"></script><style data-styled-components=""></style><style>
+
+  html,
+  body,
+  p,
+  div,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  ul,
+  ol,
+  dl,
+  img,
+  pre,
+  form,
+  fieldset {
+    margin: 0;
+    padding: 0;
+  }
+  img,
+  fieldset {
+    border: 0;
+  }
+
+
+  body,
+  html {
+    height: 100%;
+    width: 100%;
+  }
+
+  body {
+    background-color: #fff;
+    color: #172B4D;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.42857142857143;
+    -ms-overflow-style: -ms-autohiding-scrollbar;
+    text-decoration-skip-ink: auto;
+  }
+
+  /* Default margins */
+  p,
+  ul,
+  ol,
+  dl,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  blockquote,
+  pre,
+  form,
+  table {
+    margin: 12px 0 0 0;
+  }
+
+  /* Links */
+  a {
+    color: #0052CC;
+    text-decoration: none;
+  }
+  a:hover {
+    color: #0065FF;
+    text-decoration: underline;
+  }
+  a:active {
+    color: #0747A6;
+  }
+  a:focus {
+    outline: 2px solid #4C9AFF;
+    outline-offset: 2px;
+  }
+
+  /* Headings */
+  h1 {
+    
+  
+  font-size: 2.0714285714285716em;
+  font-style: inherit;
+  line-height: 1.103448275862069;
+
+  color: #172B4D;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  margin-top: 40px;
+
+  }
+  h2 {
+    
+  
+  font-size: 1.7142857142857142em;
+  font-style: inherit;
+  line-height: 1.1666666666666667;
+
+  color: #172B4D;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  margin-top: 40px;
+
+  }
+  h3 {
+    
+  
+  font-size: 1.4285714285714286em;
+  font-style: inherit;
+  line-height: 1.2;
+
+  color: #172B4D;
+  font-weight: 500;
+  letter-spacing: -0.008em;
+  margin-top: 28px;
+
+  }
+  h4 {
+    
+  
+  font-size: 1.1428571428571428em;
+  font-style: inherit;
+  line-height: 1.25;
+
+  color: #172B4D;
+  font-weight: 600;
+  letter-spacing: -0.006em;
+  margin-top: 24px;
+
+  }
+  h5 {
+    
+  
+  font-size: 1em;
+  font-style: inherit;
+  line-height: 1.1428571428571428;
+
+  color: #172B4D;
+  font-weight: 600;
+  letter-spacing: -0.003em;
+  margin-top: 16px;
+
+  }
+  h6 {
+    
+  
+  font-size: 0.8571428571428571em;
+  font-style: inherit;
+  line-height: 1.3333333333333333;
+
+  color: #172B4D;
+  font-weight: 600;
+  margin-top: 20px;
+  text-transform: uppercase;
+
+  }
+
+  /* Lists */
+  ul,
+  ol,
+  dl {
+    padding-left: 40px;
+  }
+  [dir='rtl']ul,
+  [dir='rtl']ol,
+  [dir='rtl']dl {
+    padding-left: 0;
+    padding-right: 40px;
+  }
+
+  dd,
+  dd + dt,
+  li + li {
+    margin-top: 4px;
+  }
+  ul ul:not(:first-child),
+  ol ul:not(:first-child),
+  ul ol:not(:first-child),
+  ol ol:not(:first-child) {
+    margin-top: 4px;
+  }
+
+  /* remove top margin for first element */
+  p:first-child,
+  ul:first-child,
+  ol:first-child,
+  dl:first-child,
+  h1:first-child,
+  h2:first-child,
+  h3:first-child,
+  h4:first-child,
+  h5:first-child,
+  h6:first-child,
+  blockquote:first-child,
+  pre:first-child,
+  form:first-child,
+  table:first-child {
+    margin-top: 0;
+  }
+
+  /* Quotes */
+  blockquote,
+  q {
+    color: inherit;
+  }
+  blockquote {
+    border: none;
+    padding-left: 40px;
+  }
+  [dir='rtl'] blockquote {
+    padding-left: 0;
+    padding-right: 40px;
+  }
+
+  blockquote::before,
+  q::before {
+    content: '\201C';
+  }
+
+  blockquote::after,
+  q::after {
+    content: '\201D';
+  }
+
+  blockquote::before {
+    float: left;
+    /* to keep the quotes left of any child elements like blockquote > p */
+    margin-left: -1em;
+    text-align: right;
+    width: 1em;
+  }
+  [dir='rtl'] blockquote::before {
+    float: right;
+    margin-right: -1em;
+    text-align: left;
+  }
+
+  blockquote > :last-child {
+    display: inline-block; /* so the quotes added via pseudos follow it immediately. */
+  }
+
+  /* Other typographical elements */
+  small {
+    
+  
+  font-size: 0.7857142857142857em;
+  font-style: inherit;
+  line-height: 1.4545454545454546;
+
+  color: #6B778C;
+  font-weight: 700;
+  margin-top: 16px;
+
+    font-weight: normal;
+  }
+
+  code,
+  kbd {
+    font-family: 'SFMono-Medium', 'SF Mono', 'Segoe UI Mono', 'Roboto Mono', 'Ubuntu Mono', Menlo, Consolas, Courier, monospace;
+  }
+
+  var,
+  address,
+  dfn,
+  cite {
+    font-style: italic;
+  }
+
+  abbr {
+    border-bottom: 1px #ccc dotted;
+    cursor: help;
+  }
+
+
+  table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+
+  thead,
+  tbody,
+  tfoot {
+    border-bottom: 2px solid #DFE1E6;
+  }
+
+  td,
+  th {
+    border: none;
+    padding: 4px 8px;
+    text-align: left;
+  }
+
+  th {
+    vertical-align: top;
+  }
+
+  td:first-child,
+  th:first-child {
+    padding-left: 0;
+  }
+
+  td:last-child,
+  th:last-child {
+    padding-right: 0;
+  }
+
+  caption {
+    
+  
+  font-size: 1.4285714285714286em;
+  font-style: inherit;
+  line-height: 1.2;
+
+  color: #172B4D;
+  font-weight: 500;
+  letter-spacing: -0.008em;
+  margin-top: 28px;
+
+    margin-bottom: 8px;
+    text-align: left;
+  }
+
+
+  /* IE11 doesn't support <template> elements which shouldn't be displayed */
+  template {
+    display: none;
+  }
+
+  /* IE11 and some older browsers don't support these elements yet and treat them as display: inline; */
+  article,
+  aside,
+  details,
+  figcaption,
+  figure,
+  footer,
+  header,
+  hgroup,
+  main,
+  menu,
+  nav,
+  section {
+    display: block;
+  }
+
+  /* Suppress the ugly broken image styling in Firefox */
+  @-moz-document url-prefix() {
+    img {
+      font-size: 0;
+    }
+    img:-moz-broken {
+      font-size: inherit;
+    }
+  }
+
+
+  .assistive {
+    border: 0 !important;
+    clip: rect(1px, 1px, 1px, 1px) !important;
+    height: 1px !important;
+    overflow: hidden !important;
+    padding: 0 !important;
+    position: absolute !important;
+    width: 1px !important;
+    white-space: nowrap !important;
+  }
+
+</style></head><body app-module-type="inlineDialog" app-id="document-toolbox-dialog" app-loaded=""><div class="ac-content"><div id="loading"><div class="animation-container"><svg viewBox="0 0 50 32" xmlns="http://www.w3.org/2000/svg"><circle class="anim-disc" cx="6" cy="6" r="6"></circle><circle class="anim-disc" cx="25" cy="6" r="6"></circle><circle class="anim-disc" cx="44" cy="6" r="6"></circle></svg></div></div><div id="root"><div class="styled__NotExistsWrapper-sc-1eqmyal-0 jNVUdt"><div><div class="styled__NotExistsIcon-sc-1eqmyal-1 fEBiqi"></div></div><div class="styled__NotExistsMetadata-sc-1eqmyal-3 jOqRaH"><strong>Enable Scroll Documents</strong><p class="styled__NotExistsDescription-sc-1eqmyal-4 hEXYLM">Start managing this page and its children as a Scroll Document to begin saving versions and more.</p></div></div></div></div><div id="dropdown-container"></div><script>addScript('main.876069863fbe8f0652d7.bundle.js');
+            
+            addEventListener('DOMContentLoaded', loadScripts, false);</script><div style="clear: both; display: block; height: 0px;"></div></body></html>

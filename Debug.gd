@@ -10,6 +10,9 @@ func _physics_process(delta: float) -> void:
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_released("Deubg_Restart"):
+		Engine.time_scale = 1.0
+		load("res://visuals/world/envrionment.res").adjustment_saturation = 1
+		load("res://visuals/world/envrionment.res").adjustment_contrast = 1
 		get_tree().reload_current_scene()
 	if event.is_action_released("Debug_UI_Toggle"):
 		if visible:

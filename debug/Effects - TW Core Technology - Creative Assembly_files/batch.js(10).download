@@ -1,0 +1,6 @@
+WRMCB=function(e){var c=console;if(c&&c.log&&c.error){c.log('Error running batched script.');c.error(e);}}
+;
+try {
+/* module-key = 'com.refinedwiki.confluence.plugins.theme.original:68', location = 'spacegroup.034c004bbc0e9d0f4ce8.js' */
+(window.webpackJsonpRefinedConfluenceWebPack=window.webpackJsonpRefinedConfluenceWebPack||[]).push([[68],{749:function(e,t,n){"use strict";n.r(t),function(e){n.d(t,"SpaceGroupController",(function(){return i}));var s=n(0),a=n.n(s),c=n(4),o=n(14);const i={init(t){const n=new c.b({$button:t,id:"spaceGroupMenu",width:350});t.click((function(){n.open(),n.showLoader();const t=AJS.Meta.get("abstract-category-key");let s=`${e()}/rest/refinedtheme/latest/space/uncategorized?exclude-archived-spaces=false`;return"undefined"!==t&&""!==t&&(s=`${e()}/rest/refinedtheme/latest/category/${t}/child`),a.a.ajax({url:s,type:"GET",dataType:"json",success(t){for(const n in t.spaces){const s=t.spaces[n];s.url=`${e()}/display/${s.key}`}n.setContent(a()(o.siblingList({ulClass:"rw_dialog_menu",list:t,activeKey:AJS.Meta.get("space-key")}))),n.hideLoader()},error(){}}),!1}))}}}.call(this,n(15).default)}}]);
+}catch(e){WRMCB(e)};

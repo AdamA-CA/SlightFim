@@ -9,6 +9,7 @@ var player_rigid_body : RigidBody3D
 
 func _ready() -> void:
 	player_rigid_body = get_node(player_rigid_body_path)
+	Events.connect("PlayerDied",player_died)
 
 func _physics_process(delta: float) -> void:
 	var pos = camera_position_marker.global_transform.origin#+lookat_offset_position
@@ -18,3 +19,6 @@ func _physics_process(delta: float) -> void:
 	rotation.y = lerp_angle(player_rigid_body.rotation.y,rotation.y,.25)
 	rotation.z = lerp_angle(player_rigid_body.rotation.z,rotation.z,.25)
 	global_position = pos
+
+func player_died():
+	set_physics_process(false)
