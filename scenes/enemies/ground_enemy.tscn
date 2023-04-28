@@ -1,7 +1,8 @@
-[gd_scene load_steps=10 format=3 uid="uid://bb2eofetfgu20"]
+[gd_scene load_steps=11 format=3 uid="uid://bb2eofetfgu20"]
 
 [ext_resource type="Script" path="res://scenes/enemies/GroundEnemy.gd" id="1_pyrxc"]
 [ext_resource type="AudioStream" uid="uid://60o0uixb6ql6" path="res://asset/sounds/Vine-boom-sound-effect.mp3" id="2_4stxl"]
+[ext_resource type="Script" path="res://scenes/enemies/ShootingComponent.gd" id="3_om63n"]
 
 [sub_resource type="TorusMesh" id="TorusMesh_voxjl"]
 inner_radius = 24.205
@@ -32,7 +33,7 @@ vertex_color_use_as_albedo = true
 material = SubResource("StandardMaterial3D_0ulna")
 
 [node name="GroundEnemy" type="RigidBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 204.008, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 12.2967, 0)
 collision_layer = 5
 collision_mask = 3
 mass = 50.0
@@ -62,5 +63,14 @@ volume_db = -1.0
 unit_size = 500.0
 max_db = 6.0
 bus = &"SFX"
+
+[node name="ShootingComponent" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.75233, 0.78091)
+script = ExtResource("3_om63n")
+shooting_interval = 7.0
+self_explosion_wait_time = 4.0
+projectile_speed = 0.7
+max_shooting_distance = 1500.0
+spread = 10.0
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

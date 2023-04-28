@@ -1,0 +1,6 @@
+[gd_resource type="Resource" script_class="ShootingProfile" load_steps=2 format=3 uid="uid://442pfsmvywyh"]
+
+[ext_resource type="Script" path="res://debug/test/shooting_profile.gd" id="1_y0nyl"]
+
+[resource]
+script = ExtResource("1_y0nyl")

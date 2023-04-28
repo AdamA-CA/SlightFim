@@ -93,7 +93,8 @@ Quit={
 2d_render/layer_1="Base"
 3d_physics/layer_1="Base"
 3d_physics/layer_2="Player"
-3d_physics/layer_3="PlayerKillers"
+3d_physics/layer_3="EnemiesAndObstacles"
+3d_physics/layer_4="Missiles"
 
 [rendering]
 

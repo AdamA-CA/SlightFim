@@ -1,6 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://bjysiafmcodtt"]
-
-[ext_resource type="Script" path="res://scenes/weapons/Bomb.gd" id="1_nikmj"]
+[gd_scene load_steps=5 format=3 uid="uid://bjysiafmcodtt"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_oaikf"]
 albedo_color = Color(0.913725, 0, 0.541176, 1)
@@ -23,7 +21,6 @@ continuous_cd = true
 max_contacts_reported = 2
 contact_monitor = true
 linear_damp = 0.05
-script = ExtResource("1_nikmj")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(1.91069e-15, 4.37114e-08, 1, 1, -4.37114e-08, 0, 4.37114e-08, 1, -4.37114e-08, 0, 0, 0)

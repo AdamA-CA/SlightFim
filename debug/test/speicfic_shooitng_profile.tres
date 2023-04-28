@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="ShootingProfile" load_steps=3 format=3 uid="uid://vmt7x8ldiqik"]
+
+[ext_resource type="Script" path="res://debug/test/shooting_profile.gd" id="1_kq5eo"]
+
+[sub_resource type="Curve" id="Curve_ea0ku"]
+_data = [Vector2(0.00220264, 0.809091), 0.0, 0.0, 0, 0, Vector2(1, 0.1), 2.43884, 0.0, 0, 0]
+point_count = 2
+
+[resource]
+script = ExtResource("1_kq5eo")
+curve = SubResource("Curve_ea0ku")
+dmg = 50.0
