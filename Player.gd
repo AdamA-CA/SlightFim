@@ -66,11 +66,11 @@ func make_shoot_line(z : float):
 	im.surface_end()
 
 var dir : Vector2
-func _input(event: InputEvent) -> void:
-	if event is InputEventMouseMotion:
-		pass
-		print(event.relative)
-		#dir = event.relative*mouse_sensitivity #(event.position - center) *.005
+#func _input(event: InputEvent) -> void:
+#	if event is InputEventMouseMotion:
+#		pass
+#		print(event.relative)
+#		#dir = event.relative*mouse_sensitivity #(event.position - center) *.005
 
 func _integrate_forces(state):
 	if controls_disabled:

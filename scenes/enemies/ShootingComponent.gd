@@ -13,6 +13,11 @@ var missile := preload("res://scenes/weapons/missile.tscn")
 
 var timer := Timer.new()
 
+func _input(event: InputEvent) -> void:
+	if event.is_action_released("DebugTest"):
+		var player : Node3D = get_tree().get_nodes_in_group("Player")[0]
+		spawn_missle(player)
+
 func _ready() -> void:
 	timer.wait_time = shooting_interval
 	timer.autostart = true
@@ -24,7 +29,9 @@ func shoot():
 	if(player.get_global_position().distance_to(parent.global_position) > max_shooting_distance):
 		print("player too far")
 		return
+	spawn_missle(player)
 
+func spawn_missle(player):
 	var new_missile = missile.instantiate()
 	new_missile.origin_node = owner
 	new_missile.position = global_position
@@ -33,3 +40,4 @@ func shoot():
 	var offset : Vector3 = Vector3(randf_range(-spread,spread),randf_range(-spread,spread),randf_range(-spread,spread))
 	var dir : Vector3 = new_missile.global_position.direction_to(player.get_global_position()+offset)
 	new_missile.linear_velocity = dir *BASE_SPEED*projectile_speed
+	new_missile.target = player
