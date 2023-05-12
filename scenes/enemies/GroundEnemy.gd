@@ -9,6 +9,7 @@ func _ready() -> void:
 	player = get_tree().get_nodes_in_group("Player")[0]
 	call_queue.push_back(normal_chase)
 	spawnMinimapPin()
+	Events.emit_signal("EnemyPresenceUpdated")
 
 func spawnMinimapPin():
 	var group = get_tree().get_nodes_in_group("EnemyMinimapNode")
@@ -55,3 +56,6 @@ func explode():
 	$GPUParticles3D.emitting = true
 	await get_tree().create_timer(1).timeout
 	queue_free()
+
+func _exit_tree() -> void:
+	Events.emit_signal("EnemyPresenceUpdated")

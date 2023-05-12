@@ -56,7 +56,7 @@ func _on_area_3d_body_entered(body: Node3D) -> void:
 	if (body.has_method("explode")) && explosion_kills_enemies:
 		body.explode()
 	if body is Player && explosion_kills_player:
-		body.kill_player()
+		body.got_hit()
 
 func _on_missle_mask_body_entered(body: Node3D) -> void:
 	if body == self:

@@ -7,6 +7,9 @@ class_name Player extends RigidBody3D
 @onready var raycast := $RayCast3D
 @onready var shoot_mesh : ImmediateMesh = $ShootLine.mesh
 @onready var aim_reticle := $AimReticle
+@export var max_health : int = 3
+
+@onready var health : int = max_health
 
 var particles = preload("res://scenes/effects/particles_now.material")
 var aiming_mat = preload("res://visuals/player/aiming_recticle.material")
@@ -111,4 +114,10 @@ func kill_player():
 
 func _on_body_entered(body: Node) -> void:
 	if (body.collision_layer | 0b100):
+		got_hit()
+
+func got_hit():
+	health -= 1
+	if health <= 0:
 		kill_player()
+	Events.emit_signal("PlayerHealthUpdated",health)
