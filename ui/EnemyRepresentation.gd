@@ -6,6 +6,9 @@ func _ready() -> void:
 	enemy_presence_updated()
 
 func enemy_presence_updated():
+	if (get_tree() == null):
+		return
+	
 	await get_tree().physics_frame
 	
 	var enemies := get_tree().get_nodes_in_group("Enemies")

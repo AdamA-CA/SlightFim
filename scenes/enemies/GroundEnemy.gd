@@ -54,6 +54,7 @@ func explode():
 	$MeshInstance3D.hide()
 	died = true
 	$GPUParticles3D.emitting = true
+	Events.emit_signal("EnemyKilled","Basic")
 	await get_tree().create_timer(1).timeout
 	queue_free()
 

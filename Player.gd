@@ -3,6 +3,7 @@ class_name Player extends RigidBody3D
 @export var thrust : float = 10.0
 @export var uplift_strength : float = .5
 @export var mouse_sensitivity : float = .125
+@export var hit_delay : float = .5
 
 @onready var raycast := $RayCast3D
 @onready var shoot_mesh : ImmediateMesh = $ShootLine.mesh
@@ -10,6 +11,7 @@ class_name Player extends RigidBody3D
 @export var max_health : int = 3
 
 @onready var health : int = max_health
+var hit_delay_timer := Timer.new()
 
 var particles = preload("res://scenes/effects/particles_now.material")
 var aiming_mat = preload("res://visuals/player/aiming_recticle.material")
@@ -19,6 +21,10 @@ var cur_dir : Vector2
 var env : Environment = preload("res://visuals/world/envrionment.res")
 var controls_disabled : bool = false
 var death_label := preload("res://visuals/player/wreckt.tscn")
+
+func _ready() -> void:
+	add_child(hit_delay_timer)
+	hit_delay_timer.one_shot = true
 
 func _physics_process(delta: float) -> void:
 	var new_color := Color.WHITE
@@ -117,7 +123,9 @@ func _on_body_entered(body: Node) -> void:
 		got_hit()
 
 func got_hit():
-	health -= 1
-	if health <= 0:
-		kill_player()
-	Events.emit_signal("PlayerHealthUpdated",health)
+	if hit_delay_timer.is_stopped():
+		hit_delay_timer.start(hit_delay)
+		health -= 1
+		if health <= 0:
+			kill_player()
+		Events.emit_signal("PlayerHealthUpdated",health)
